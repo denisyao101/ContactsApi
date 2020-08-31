@@ -7,3 +7,9 @@ class ContactSerializer(serializers.ModelSerializer):
         model = Contact
         # fields = '__all__'
         exclude = ['owner', ]
+
+
+class TestSerialiser(serializers.Serializer):
+    class Meta:
+        model = Contact
+        exclude = ['owner', ]
