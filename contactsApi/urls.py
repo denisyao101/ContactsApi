@@ -25,10 +25,10 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Contacts API",
         default_version='v1',
-        description="Test description",
-        terms_of_service="https://www.google.com/policies/terms/",
+        description="Demo d'Api pour une application PWA de gestion de contact ",
+        #terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="denisyao@outlook.com"),
-        license=openapi.License(name="BSD License"),
+        # license=openapi.License(name="BSD License"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -40,6 +40,5 @@ urlpatterns = [
     path('api/auth/', include('accounts.urls')),
     path('api/contacts/', include('contacts.urls')),
     # path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
