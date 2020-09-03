@@ -2,7 +2,7 @@ from rest_framework import generics, views, permissions
 from rest_framework.response import Response
 from rest_framework import status
 from .serialisers import RegisterSerializer, TokenSerializer, LoginSerializer, CheckPasswordTokenSerializer, \
-    SetNewPasswordSerialiser
+    SetNewPasswordSerialiser,ForgotPasswordSerializer
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 from .utils import Utils
@@ -83,7 +83,7 @@ class LoginView(generics.GenericAPIView):
 
 class ForgotPasswordView(generics.GenericAPIView):
     User = get_user_model()
-    serializer_class = CheckPasswordTokenSerializer
+    serializer_class = ForgotPasswordSerializer
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -96,7 +96,7 @@ class ForgotPasswordView(generics.GenericAPIView):
             user_idb64 = urlsafe_base64_encode(smart_bytes(user.id))
             token = PasswordResetTokenGenerator().make_token(user)
             current_site = get_current_site(request).domain
-            relative_link = reverse('reset-password', kwargs={'uidb64': smart_str(user_idb64), 'token': token})
+            relative_link = reverse('password-token-check', kwargs={'uidb64': smart_str(user_idb64), 'token': token})
             abs_url = 'http://' + current_site + relative_link
             email_body = 'Hi ' + user.last_name + '\n Use this link bellow to rest your password. \n' + abs_url
             data = {'email_body': email_body, 'email_subject': 'Reset your Account Password', 'to_user': user.email}

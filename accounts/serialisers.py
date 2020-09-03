@@ -57,6 +57,11 @@ class TokenSerializer(serializers.ModelSerializer):
         model = User
         fields = ('token',)
 
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    class Meta:
+        fields = ('email',)
 
 class CheckPasswordTokenSerializer(serializers.Serializer):
     uidb64 = serializers.EmailField(required=True)
@@ -84,3 +89,6 @@ class SetNewPasswordSerialiser(serializers.Serializer):
             print(e)
             raise AuthenticationFailed('the reset link is Invalid', 401)
         return super().validate(attrs)
+
+
+

@@ -15,7 +15,8 @@ class ContactList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
     def get_queryset(self):
-        return Contact.objects.filter(owner=self.request.user)
+        if isinstance(self.request.user.id, int):
+            return Contact.objects.filter(owner=self.request.user)
 
 
 class ContactDetails(generics.RetrieveUpdateDestroyAPIView):
@@ -23,4 +24,5 @@ class ContactDetails(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated, IsOwner]
 
     def get_queryset(self):
-        return Contact.objects.filter(owner=self.request.user)
+        if isinstance(self.request.user.id, int):
+            return Contact.objects.filter(owner=self.request.user)
