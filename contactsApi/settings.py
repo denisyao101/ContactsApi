@@ -103,9 +103,7 @@ SWAGGER_SETTINGS = {
 }
 
 # Cors Headers White list Config
-CORS_ORIGIN_WHITELIST = [
-    'http//:localhost:8000',
-]
+CORS_ALLOW_ALL_ORIGINS = True
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
