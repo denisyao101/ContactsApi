@@ -25,7 +25,7 @@ SECRET_KEY = "5qg!8&t$8l-8-_8xuq)1%!#%s_qk^0p^8-5q0in$dr_g=j7h^n"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'demo-contacts-api.herokuapp.com']
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    # 'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
     'drf_yasg',
     'accounts',
     'contacts',
@@ -152,5 +152,3 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "denisyao101@gmail.com"
 EMAIL_HOST_PASSWORD = "Tlcdenis16"
-
-
