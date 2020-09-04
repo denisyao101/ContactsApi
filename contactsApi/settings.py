@@ -79,8 +79,13 @@ WSGI_APPLICATION = 'contactsApi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dada5lerqs772',
+        'HOST': 'ec2-50-16-221-180.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'zuqvrpczplwrit',
+        'PASSWORD': '4745846524ae0b5f1c2bab720b4c0c000986376d4ef55175f69b953876ddfcd3'
+
     }
 }
 # rest framework config
