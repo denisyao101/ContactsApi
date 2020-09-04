@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
+    # 'gmailapi_backend',
     'accounts',
     'contacts',
 ]
@@ -150,10 +151,19 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = 'staticfiles'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "democontats@gmail.com"
-EMAIL_HOST_PASSWORD = "Django2020"
+EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+SENDGRID_API_KEY = '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'
+
+# GMAIL_API_CLIENT_ID = '133413214067-jqqv8ln65tkoigkdf31320n9rbablfpd.apps.googleusercontent.com'
+# GMAIL_API_CLIENT_SECRET = 'V-0D4LIDTSjw3Z3NBJmlmzg6'
+# GMAIL_API_REFRESH_TOKEN = ''
+# EMAIL_HOST = 'smtp.eu.sparkpostmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'SMTP_Injection'
+# EMAIL_HOST_PASSWORD = '64963934fa05f2bf97b323aa5dad39e2b751a12c'
+# EMAIL_USE_TLS = True
+
+
+# SharkPost API key 64963934fa05f2bf97b323aa5dad39e2b751a12c
 
 django_heroku.settings(locals())
