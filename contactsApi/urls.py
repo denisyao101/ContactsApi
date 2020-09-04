@@ -25,7 +25,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Contacts API",
         default_version='v1',
-        description="Demo d'Api pour une application PWA de gestion de contact ",
+        description="Demo d'Api pour une application PWA de gestion de contacts ",
         #terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="denisyao@outlook.com"),
         # license=openapi.License(name="BSD License"),

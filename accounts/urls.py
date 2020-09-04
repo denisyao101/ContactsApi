@@ -12,5 +12,4 @@ urlpatterns = [
     path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
     path('password-token-check/<uidb64>/<token>/', PasswordTokenCheckAPI.as_view(), name='password-token-check'),
     path('reset-password/', PasswordResetView.as_view(), name='reset-password'),
-
 ]
