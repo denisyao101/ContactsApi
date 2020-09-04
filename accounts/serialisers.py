@@ -45,7 +45,7 @@ class LoginSerializer(serializers.ModelSerializer):
 
         return {
             'email': user.email,
-            'Nom complet': user.full_name,
+            'full name': user.full_name,
             'tokens': user.tokens()
         }
 
